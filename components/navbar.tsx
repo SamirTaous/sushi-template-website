@@ -35,9 +35,13 @@ export function Navbar() {
           {/* Logo */}
           <a 
             href="#" 
-            className="text-2xl font-serif font-bold tracking-wider text-gold"
+            className="flex items-center"
           >
-            TOBIKO
+            <img 
+              src="/tobiko-sushi-logo.png" 
+              alt="Tobiko Sushi" 
+              className="h-14 w-auto"
+            />
           </a>
 
           {/* Desktop Menu */}
