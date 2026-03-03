@@ -2,48 +2,40 @@
 
 import { useState } from 'react'
 
-const MENU_CATEGORIES = {
-  nigiri: {
-    label: 'Nigiri',
-    items: [
-      { name: 'Toro', price: '$8', description: 'Bluefin belly' },
-      { name: 'Uni', price: '$9', description: 'Sea urchin' },
-      { name: 'Ikura', price: '$7', description: 'Salmon roe' },
-      { name: 'Maguro', price: '$6', description: 'Bluefin tuna' },
-    ],
+const SUSHI_ITEMS = [
+  { 
+    name: 'Salmon Nigiri', 
+    price: '$8', 
+    description: 'Fresh Atlantic salmon over seasoned rice',
+    image: '/sushi-items (1).jpg'
   },
-  rolls: {
-    label: 'Rolls',
-    items: [
-      { name: 'Dragon Roll', price: '$14', description: 'Avocado, cucumber, eel' },
-      { name: 'Phoenix Roll', price: '$15', description: 'Spicy salmon, cream cheese' },
-      { name: 'Sakura Roll', price: '$12', description: 'Cherry blossom selection' },
-      { name: 'Rainbow Roll', price: '$16', description: 'Multiple fish varieties' },
-    ],
+  { 
+    name: 'Tuna Sashimi', 
+    price: '$12', 
+    description: 'Premium bluefin tuna, expertly sliced',
+    image: '/sushi-items (2).jpg'
   },
-  sashimi: {
-    label: 'Sashimi',
-    items: [
-      { name: 'Yellowtail', price: '$7', description: 'Fresh hamachi' },
-      { name: 'Red Snapper', price: '$8', description: 'Seasonal favorite' },
-      { name: 'Scallop', price: '$9', description: 'Tender hotate' },
-      { name: 'Squid', price: '$6', description: 'Fresh ika' },
-    ],
+  { 
+    name: 'Dragon Roll', 
+    price: '$16', 
+    description: 'Eel, avocado, and cucumber with special sauce',
+    image: '/sushi-items (3).jpg'
   },
-  sides: {
-    label: 'Sides',
-    items: [
-      { name: 'Edamame', price: '$5', description: 'Steamed soybeans' },
-      { name: 'Gyoza', price: '$6', description: 'Fried dumplings' },
-      { name: 'Miso Soup', price: '$4', description: 'Traditional broth' },
-      { name: 'Seaweed Salad', price: '$5', description: 'Fresh and tangy' },
-    ],
+  { 
+    name: 'Chirashi Bowl', 
+    price: '$22', 
+    description: 'Assorted sashimi over sushi rice',
+    image: '/sushi-items (4).jpg'
   },
-}
+  { 
+    name: 'Omakase Selection', 
+    price: '$35', 
+    description: "Chef's choice of premium sushi and sashimi",
+    image: '/sushi-items (5).jpg'
+  },
+]
 
 export function Menu() {
-  const [activeTab, setActiveTab] = useState('nigiri')
-
   return (
     <section 
       id="menu"
@@ -61,29 +53,9 @@ export function Menu() {
           </p>
         </div>
 
-        {/* Tabs - minimal underline style */}
-        <div className="flex flex-wrap justify-center gap-8 mb-12 border-b border-gold/20">
-          {Object.entries(MENU_CATEGORIES).map(([key, category]) => (
-            <button
-              key={key}
-              onClick={() => setActiveTab(key)}
-              className={`px-4 py-3 font-serif text-lg tracking-wider transition-all duration-300 relative ${
-                activeTab === key
-                  ? 'text-cream'
-                  : 'text-gold hover:text-cream'
-              }`}
-              style={{
-                borderBottom: activeTab === key ? '2px solid #D4A843' : '1px solid #D4A843/50'
-              }}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
-
         {/* Menu Items Grid */}
         <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
-          {MENU_CATEGORIES[activeTab as keyof typeof MENU_CATEGORIES].items.map((item, index) => (
+          {SUSHI_ITEMS.map((item, index) => (
             <div
               key={index}
               className="group pb-6 border-b border-charcoal/50 hover:border-b-2 hover:border-gold transition-all duration-300 flex items-center justify-between relative"
@@ -106,7 +78,7 @@ export function Menu() {
               {/* Food image - right side */}
               <div className="w-16 h-16 ml-6 rounded-full overflow-hidden flex-shrink-0 border border-gold/30 group-hover:border-gold transition-colors duration-300">
                 <img 
-                  src="https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=100&q=80"
+                  src={item.image}
                   alt={item.name}
                   className="w-full h-full object-cover"
                 />

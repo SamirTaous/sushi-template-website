@@ -5,39 +5,48 @@ import { useEffect, useRef } from 'react'
 const PLATEAUX = [
   {
     id: 1,
-    name: 'Omakase',
-    description: 'Chef\'s finest selection of premium nigiri',
-    pieces: '10 pieces',
-    price: '$85',
-    highlights: ['Bluefin Toro', 'Uni', 'Salmon Roe'],
-    image: 'https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=500&q=80',
+    name: 'Salmon Selection',
+    description: 'Fresh Atlantic salmon prepared multiple ways',
+    pieces: '8 pieces',
+    price: '$65',
+    highlights: ['Salmon Nigiri', 'Salmon Sashimi', 'Salmon Roll'],
+    image: '/sushi-items (1).jpg',
   },
   {
     id: 2,
-    name: 'Sakura',
-    description: 'Delicate assortment of signature rolls',
-    pieces: '12 pieces',
-    price: '$72',
-    highlights: ['Dragon Roll', 'Phoenix Roll', 'Sakura Roll'],
-    image: 'https://images.unsplash.com/photo-1562802378-063ec186a863?w=500&q=80',
+    name: 'Tuna Premium',
+    description: 'Premium bluefin tuna expertly sliced',
+    pieces: '10 pieces',
+    price: '$85',
+    highlights: ['Tuna Sashimi', 'Spicy Tuna', 'Tuna Tataki'],
+    image: '/sushi-items (2).jpg',
   },
   {
     id: 3,
-    name: 'Kintsugi',
-    description: 'Premium sashimi and nigiri combination',
-    pieces: '15 pieces',
-    price: '$95',
-    highlights: ['Yellowtail', 'Red Snapper', 'Scallop'],
-    image: 'https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=500&q=80',
+    name: 'Dragon Special',
+    description: 'Signature rolls with eel and avocado',
+    pieces: '12 pieces',
+    price: '$75',
+    highlights: ['Dragon Roll', 'Eel Sauce', 'Tempura Crunch'],
+    image: '/sushi-items (3).jpg',
   },
   {
     id: 4,
-    name: 'Zenith',
-    description: 'The ultimate tasting experience',
-    pieces: '24 pieces',
-    price: '$145',
-    highlights: ['Seasonal Selection', 'Chef\'s Signature', 'Premium Sides'],
-    image: 'https://images.unsplash.com/photo-1617196034682-dbab064af60e?w=500&q=80',
+    name: 'Chirashi Deluxe',
+    description: 'Assorted sashimi over seasoned rice',
+    pieces: '15 pieces',
+    price: '$95',
+    highlights: ['Mixed Sashimi', 'Sushi Rice', 'Seasonal Garnish'],
+    image: '/sushi-items (4).jpg',
+  },
+  {
+    id: 5,
+    name: 'Omakase Experience',
+    description: "Chef's ultimate selection of premium items",
+    pieces: '20 pieces',
+    price: '$125',
+    highlights: ['Chef Selection', 'Premium Fish', 'Seasonal Specials'],
+    image: '/sushi-items (5).jpg',
   },
 ]
 
@@ -81,7 +90,7 @@ export function Plateaux() {
         </div>
 
         {/* Plateaux Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {PLATEAUX.map((platter, index) => (
             <div
               key={platter.id}

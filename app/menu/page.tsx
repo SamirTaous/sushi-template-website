@@ -31,46 +31,44 @@ export default function MenuPage() {
 
   const menuItems = {
     rolls: [
-      { name: 'California Bœuf Asperge', description: 'Bœuf tendre, asperge, avocat, tobiko rouge', price: '75 MAD', image: 'https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=100&q=80' },
-      { name: 'California Roll Classique', description: 'Crabe, avocat, concombre, sésame', price: '55 MAD', image: 'https://images.unsplash.com/photo-1562802378-063ec186a863?w=100&q=80' },
-      { name: 'Spicy Salmon Roll', description: 'Saumon frais, sauce spicy, avocat', price: '65 MAD', image: 'https://images.unsplash.com/photo-1617196034682-dbab064af60e?w=100&q=80' },
-      { name: 'Dragon Roll', description: 'Crevette tempura, avocat, sauce anguille', price: '70 MAD', image: 'https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=100&q=80' },
-      { name: 'Rainbow Roll', description: 'Saumon, thon, avocat, tobiko', price: '80 MAD', image: 'https://images.unsplash.com/photo-1553621042-f6e147245754?w=100&q=80' },
-      { name: 'Tobiko Special Roll', description: 'Création signature du chef', price: '90 MAD', image: 'https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=100&q=80' },
+      { name: 'Salmon Nigiri Roll', description: 'Fresh Atlantic salmon over seasoned rice', price: '65 MAD', image: '/sushi-items (1).jpg' },
+      { name: 'Tuna Sashimi Selection', description: 'Premium bluefin tuna, expertly sliced', price: '85 MAD', image: '/sushi-items (2).jpg' },
+      { name: 'Dragon Roll Special', description: 'Eel, avocado, cucumber with special sauce', price: '75 MAD', image: '/sushi-items (3).jpg' },
+      { name: 'Chirashi Bowl Deluxe', description: 'Assorted sashimi over sushi rice', price: '95 MAD', image: '/sushi-items (4).jpg' },
+      { name: 'Omakase Selection', description: "Chef's choice of premium sushi and sashimi", price: '125 MAD', image: '/sushi-items (5).jpg' },
     ],
     sashimis: [
-      { name: 'Sashimis Saumon', description: 'Tranches fines de saumon frais', price: '70 MAD', image: 'https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=100&q=80' },
-      { name: 'Sashimis Thon', description: 'Thon premium saveur intense', price: '75 MAD', image: 'https://images.unsplash.com/photo-1562802378-063ec186a863?w=100&q=80' },
+      { name: 'Salmon Sashimi', description: 'Fresh Atlantic salmon, expertly cut', price: '70 MAD', image: '/sushi-items (1).jpg' },
+      { name: 'Tuna Sashimi Premium', description: 'Premium bluefin tuna selection', price: '85 MAD', image: '/sushi-items (2).jpg' },
     ],
     salades: [
-      { name: 'Salade Tobiko', description: 'Saumon frais, crevettes, mangue, avocat, fleur comestible', price: '85 MAD', image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=100&q=80' },
-      { name: 'Salade Wakame', description: 'Algues marinées, sésame, sauce ponzu', price: '45 MAD', image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=100&q=80' },
+      { name: 'Chirashi Salad', description: 'Mixed sashimi with fresh greens and sesame', price: '85 MAD', image: '/sushi-items (4).jpg' },
+      { name: 'Salmon Poke Bowl', description: 'Fresh salmon with avocado and edamame', price: '75 MAD', image: '/sushi-items (1).jpg' },
     ],
     bento: [
-      { name: 'Bento Tobiko', description: 'Repas complet japonais: sushis, yakitoris, salade, accompagnements', price: '120 MAD', image: 'https://images.unsplash.com/photo-1553621042-f6e147245754?w=100&q=80' },
+      { name: 'Omakase Bento', description: 'Complete Japanese meal with chef selection', price: '120 MAD', image: '/sushi-items (5).jpg' },
     ],
     yakitoris: [
-      { name: 'Yakitoris Tsukune', description: 'Boulettes de poulet grillées, sauce teriyaki, sésame', price: '55 MAD', image: 'https://images.unsplash.com/photo-1599599810694-b5ac4dd64e58?w=100&q=80' },
-      { name: 'Yakitoris Poulet', description: 'Brochettes de poulet marinées, sauce yakitori', price: '50 MAD', image: 'https://images.unsplash.com/photo-1617196034682-dbab064af60e?w=100&q=80' },
-      { name: 'Yakitoris Bœuf', description: 'Brochettes de bœuf, sauce soja, gingembre', price: '60 MAD', image: 'https://images.unsplash.com/photo-1555939594-58d7cb561e1f?w=100&q=80' },
+      { name: 'Salmon Teriyaki', description: 'Grilled salmon with teriyaki glaze', price: '65 MAD', image: '/sushi-items (1).jpg' },
+      { name: 'Tuna Tataki', description: 'Seared tuna with ponzu sauce', price: '75 MAD', image: '/sushi-items (2).jpg' },
     ],
     nems: [
-      { name: 'Nems Crevettes', description: 'Nems croustillants aux crevettes, sauce aigre-douce', price: '50 MAD', image: 'https://images.unsplash.com/photo-1585238341710-4a4a1ebc7e65?w=100&q=80' },
-      { name: 'Nems Légumes', description: 'Nems végétariens, sauce soja', price: '40 MAD', image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=100&q=80' },
+      { name: 'Salmon Hand Roll', description: 'Fresh salmon in crispy nori wrap', price: '50 MAD', image: '/sushi-items (1).jpg' },
+      { name: 'Dragon Hand Roll', description: 'Eel and avocado hand roll', price: '55 MAD', image: '/sushi-items (3).jpg' },
     ],
     plateaux: [
-      { name: 'Plateau Tobiko Pour 2', description: 'Sélection de rolls et makis pour 2 personnes', price: 'À partir de 189 MAD', image: 'https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=100&q=80' },
-      { name: 'Plateau Tobiko Pour 4', description: 'Grand assortiment pour 4 personnes', price: 'À partir de 349 MAD', image: 'https://images.unsplash.com/photo-1562802378-063ec186a863?w=100&q=80' },
-      { name: 'Bateau Tobiko Royal', description: 'Le spectaculaire bateau de sushis pour 8-10 personnes', price: 'À partir de 649 MAD', image: 'https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=100&q=80' },
+      { name: 'Salmon Platter for 2', description: 'Salmon selection for 2 people', price: 'À partir de 189 MAD', image: '/sushi-items (1).jpg' },
+      { name: 'Mixed Sashimi Platter', description: 'Assorted sashimi selection', price: 'À partir de 349 MAD', image: '/sushi-items (2).jpg' },
+      { name: 'Omakase Royal Boat', description: 'Ultimate sushi experience for 8-10 people', price: 'À partir de 649 MAD', image: '/sushi-items (5).jpg' },
     ],
     desserts: [
-      { name: 'Crème Brûlée Matcha', description: 'Crème riche infusée au thé matcha', price: '35 MAD', image: 'https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=100&q=80' },
-      { name: 'Mochi Glace', description: 'Mochi frais aux saveurs variées', price: '30 MAD', image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=100&q=80' },
+      { name: 'Matcha Mochi', description: 'Traditional Japanese sweet with matcha', price: '35 MAD', image: '/sushi-items (5).jpg' },
+      { name: 'Dorayaki Special', description: 'Pancake sandwich with sweet filling', price: '30 MAD', image: '/sushi-items (4).jpg' },
     ],
     boissons: [
-      { name: 'Thé Matcha', description: 'Thé vert japonais premium', price: '25 MAD', image: 'https://images.unsplash.com/photo-1597318284340-23c939d3b3b1?w=100&q=80' },
-      { name: 'Jus Frais', description: 'Sélection de jus frais maison', price: '20 MAD', image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=100&q=80' },
-      { name: 'Saké Premium', description: 'Saké japonais sélectionné', price: '80 MAD', image: 'https://images.unsplash.com/photo-1608270861620-7dbe475a6b0e?w=100&q=80' },
+      { name: 'Premium Sake', description: 'Selected Japanese sake', price: '80 MAD', image: '/sushi-items (5).jpg' },
+      { name: 'Matcha Tea', description: 'Traditional Japanese green tea', price: '25 MAD', image: '/sushi-items (4).jpg' },
+      { name: 'Fresh Juice Selection', description: 'House-made fresh juices', price: '20 MAD', image: '/sushi-items (1).jpg' },
     ],
   }
 
