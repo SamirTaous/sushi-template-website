@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, ReactNode } from 'react'
-import { BrandConfig } from './brand-registry'
+import { BrandConfig, getBrandConfig, DEFAULT_BRAND } from './brand-registry'
 
 interface BrandContextType {
     brandConfig: BrandConfig
@@ -27,7 +27,11 @@ export function BrandProvider({ children, brandConfig, brandKey }: BrandProvider
 export function useBrand() {
     const context = useContext(BrandContext)
     if (context === undefined) {
-        throw new Error('useBrand must be used within a BrandProvider')
+        // Fallback to default brand when no provider is available
+        return {
+            brandConfig: getBrandConfig(DEFAULT_BRAND),
+            brandKey: DEFAULT_BRAND
+        }
     }
     return context
 }

@@ -4,8 +4,11 @@ import { useState, useEffect } from 'react'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 import { ScrollProgress } from '@/components/scroll-progress'
+import { getBrandConfig, DEFAULT_BRAND } from '@/lib/brand-registry'
 
 export default function MenuPage() {
+  // Use default brand config for static menu page
+  const brandConfig = getBrandConfig(DEFAULT_BRAND)
   const [activeCategory, setActiveCategory] = useState('rolls')
   const [stickyNav, setStickyNav] = useState(false)
 
@@ -88,7 +91,7 @@ export default function MenuPage() {
       <section 
         className="relative pt-20 h-96"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1553621042-f6e147245754?w=1920&q=80)',
+          backgroundImage: `url(${brandConfig.assets.heroBackground})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -97,7 +100,7 @@ export default function MenuPage() {
         <div className="relative z-10 h-full flex flex-col items-center justify-center">
           <h1 className="text-8xl font-serif font-bold text-cream mb-4">Notre Menu</h1>
           <div className="h-px w-24 bg-gold mb-4" />
-          <p className="text-gold text-sm uppercase tracking-widest">Cuisine japonaise fine • Casablanca & Bouskoura</p>
+          <p className="text-gold text-sm uppercase tracking-widest">{brandConfig.tagline} • {brandConfig.locations.map(l => l.name.split(' ').slice(-1)[0]).join(' & ')}</p>
         </div>
       </section>
 
@@ -160,18 +163,15 @@ export default function MenuPage() {
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-5xl font-serif font-bold text-cream mb-8">Commandez Maintenant</h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a 
-              href="tel:0520900902"
-              className="px-8 py-4 bg-black text-cream font-serif text-lg tracking-wider uppercase hover:bg-charcoal transition-all duration-300"
-            >
-              Appeler Casablanca 0520 900 902
-            </a>
-            <a 
-              href="tel:0522012901"
-              className="px-8 py-4 border-2 border-cream text-cream font-serif text-lg tracking-wider uppercase hover:bg-cream/10 transition-all duration-300"
-            >
-              Appeler Bouskoura 0522 01 29 01
-            </a>
+            {brandConfig.locations.map((location) => (
+              <a 
+                key={location.id}
+                href={`tel:${location.phone.link}`}
+                className="px-8 py-4 bg-black text-cream font-serif text-lg tracking-wider uppercase hover:bg-charcoal transition-all duration-300"
+              >
+                Appeler {location.name.split(' ').slice(-1)[0]} {location.phone.display}
+              </a>
+            ))}
           </div>
         </div>
       </section>

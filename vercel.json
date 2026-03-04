@@ -1,0 +1,101 @@
+{
+  "functions": {
+    "app/[brand]/layout.tsx": {
+      "maxDuration": 10
+    },
+    "app/[brand]/page.tsx": {
+      "maxDuration": 10
+    }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/tobiko",
+      "permanent": false
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/tobiko/favicon.ico",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/tobiko/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "tobiko.com"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/tobiko/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.tobiko.com"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/sakura/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "sakura-restaurant.com"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/sakura/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.sakura-restaurant.com"
+        }
+      ]
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}
