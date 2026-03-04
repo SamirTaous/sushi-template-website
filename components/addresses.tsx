@@ -1,29 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-
-const LOCATIONS = [
-  {
-    id: 1,
-    name: 'Tobiko Casablanca',
-    address: 'Casablanca',
-    city: 'Maroc',
-    phone: '0520 900 902',
-    email: 'contact@tobiko.ma',
-    hours: '12h00 - 00h00 • Non-Stop 7/7',
-    specialty: 'Sur Place · À Emporter · Livraison',
-  },
-  {
-    id: 2,
-    name: 'Tobiko Bouskoura',
-    address: 'Bouskoura',
-    city: 'Maroc',
-    phone: '0522 01 29 01',
-    email: 'contact@tobiko.ma',
-    hours: '12h00 - 00h00 • Non-Stop 7/7',
-    specialty: 'Sur Place · À Emporter · Livraison',
-  },
-]
+import { brandConfig } from '@/lib/brand-config'
 
 export function Addresses() {
   const cardsRef = useRef<HTMLDivElement>(null)
@@ -55,17 +33,17 @@ export function Addresses() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-serif font-bold text-cream mb-4 tracking-tight">
-            Nos Adresses
+            {brandConfig.sections.addresses.title}
           </h2>
           <div className="h-1 w-24 bg-gold mx-auto mb-6" />
           <p className="text-cream/60 text-lg">
-            Visitez l'une de nos trois locations à Paris
+            {brandConfig.sections.addresses.subtitle}
           </p>
         </div>
 
         {/* Locations Grid */}
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {LOCATIONS.map((location, index) => (
+          {brandConfig.locations.map((location, index) => (
             <div
               key={location.id}
               className="location-card opacity-0 relative border border-gold/30 hover:border-gold transition-all duration-300 p-8 overflow-hidden group"
@@ -75,7 +53,7 @@ export function Addresses() {
               <div 
                 className="absolute inset-0 opacity-15 group-hover:opacity-30 transition-opacity duration-300"
                 style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?w=400&q=80)',
+                  backgroundImage: `url(${location.mapImage})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -102,11 +80,11 @@ export function Addresses() {
 
                 <div>
                   <p className="text-cream/40 text-xs uppercase tracking-widest mb-1">Téléphone</p>
-                  <a href={`tel:${location.phone}`} className="text-cream hover:text-gold transition-colors block">
-                    {location.phone}
+                  <a href={`tel:${location.phone.link}`} className="text-cream hover:text-gold transition-colors block">
+                    {location.phone.display}
                   </a>
-                  <a href={`tel:${location.phone}`} className="text-red-accent hover:text-cream text-sm font-serif font-bold mt-2 inline-flex items-center gap-1">
-                    Appeler Maintenant →
+                  <a href={`tel:${location.phone.link}`} className="text-red-accent hover:text-cream text-sm font-serif font-bold mt-2 inline-flex items-center gap-1">
+                    {brandConfig.cta.callNow} →
                   </a>
                 </div>
 
@@ -133,7 +111,7 @@ export function Addresses() {
               </div>
 
               <button className="w-full py-3 border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 text-sm font-serif uppercase tracking-wider">
-                Directions
+                {brandConfig.cta.directions}
               </button>
               </div>
             </div>

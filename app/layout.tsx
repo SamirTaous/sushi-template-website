@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { brandConfig } from '@/lib/brand-config'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({ 
@@ -14,8 +15,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Tobiko Fine Sushi | Premium Japanese Cuisine',
-  description: 'Experience authentic Japanese sushi crafted with precision and passion at Tobiko Fine Sushi',
+  title: brandConfig.seo.title,
+  description: brandConfig.seo.description,
   generator: 'v0.app',
   viewport: {
     width: 'device-width',
@@ -23,11 +24,11 @@ export const metadata: Metadata = {
     userScalable: false,
     viewportFit: 'cover',
   },
-  themeColor: '#0a0a0a',
+  themeColor: brandConfig.seo.themeColor,
   icons: {
     icon: [
       {
-        url: '/icon.svg',
+        url: brandConfig.assets.favicon,
         type: 'image/svg+xml',
       },
     ],

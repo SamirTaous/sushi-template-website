@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { brandConfig } from '@/lib/brand-config'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -14,15 +15,6 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Plateaux', href: '/#plateaux' },
-    { label: 'Menu', href: '/menu' },
-    { label: 'Expérience', href: '/#experience' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'Réserver', href: '/#reservation' },
-  ]
 
   return (
     <nav 
@@ -38,15 +30,15 @@ export function Navbar() {
             className="flex items-center"
           >
             <img 
-              src="/tobiko-sushi-logo.png" 
-              alt="Tobiko Sushi" 
+              src={brandConfig.assets.logo}
+              alt={brandConfig.name}
               className="h-14 w-auto"
             />
           </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {brandConfig.navigation.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -72,7 +64,7 @@ export function Navbar() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden pb-4 border-t border-charcoal">
-            {navLinks.map((link) => (
+            {brandConfig.navigation.map((link) => (
               <a
                 key={link.href}
                 href={link.href}

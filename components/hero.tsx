@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { brandConfig } from '@/lib/brand-config'
 
 export function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null)
@@ -32,7 +33,7 @@ export function Hero() {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1553621042-f6e147245754?w=1920&q=80)',
+          backgroundImage: `url(${brandConfig.assets.heroBackground})`,
           filter: 'brightness(0.4)'
         }}
       />
@@ -55,14 +56,14 @@ export function Hero() {
             textShadow: '0 0 80px rgba(212, 168, 67, 0.3)'
           }}
         >
-          TOBIKO
+          {brandConfig.name}
         </h1>
 
         {/* Subtitle with decorative lines */}
         <div className="flex items-center justify-center gap-6 mb-12">
           <div className="w-12 h-px bg-gradient-to-r from-transparent to-gold" />
           <p className="text-xl md:text-2xl text-gold font-light tracking-widest uppercase animate-fade-up opacity-0" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
-            Cuisine Japonaise Fine
+            {brandConfig.tagline}
           </p>
           <div className="w-12 h-px bg-gradient-to-l from-transparent to-gold" />
         </div>
@@ -79,7 +80,7 @@ export function Hero() {
           href="/contact"
           className="inline-block px-8 py-4 bg-red-accent text-cream font-serif text-lg tracking-wider uppercase hover:bg-red-accent/80 transition-all duration-300 transform hover:scale-105"
         >
-          Réserver une Table
+          {brandConfig.cta.reservation}
         </a>
       </div>
 
