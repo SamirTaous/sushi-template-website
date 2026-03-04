@@ -1,7 +1,14 @@
-import { brandConfig } from '@/lib/brand-config'
+'use client'
+
+import { useBrandConfig, useBrand } from '@/lib/brand-context'
+import { getBrandNavigation } from '@/lib/navigation-utils'
 
 export function Footer() {
+  const brandConfig = useBrandConfig()
+  const { brandKey } = useBrand()
   const currentYear = new Date().getFullYear()
+
+  const navigation = getBrandNavigation(brandKey, brandConfig.navigation)
 
   return (
     <footer className="relative bg-black border-t border-charcoal py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -31,7 +38,7 @@ export function Footer() {
           <div>
             <h4 className="text-cream font-serif font-bold uppercase tracking-widest mb-4">Navigation</h4>
             <ul className="space-y-2">
-              {brandConfig.navigation.slice(0, 4).map((link) => (
+              {navigation.slice(0, 4).map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="text-cream/60 hover:text-gold transition-colors text-sm">
                     {link.label}

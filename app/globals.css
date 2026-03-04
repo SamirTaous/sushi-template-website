@@ -1,11 +1,11 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-black: #0a0a0a;
-  --color-charcoal: #1a1a1a;
-  --color-cream: #F5F0E8;
-  --color-red-accent: #C0392B;
-  --color-gold: #D4A843;
+  --color-black: var(--color-primary, #0a0a0a);
+  --color-charcoal: var(--color-secondary, #1a1a1a);
+  --color-cream: var(--color-cream, #F5F0E8);
+  --color-red-accent: var(--color-accent, #C0392B);
+  --color-gold: var(--color-gold, #D4A843);
   
   --font-sans: 'Inter', 'Inter Fallback';
   --font-serif: 'Cormorant Garamond', 'Cormorant Garamond Fallback';

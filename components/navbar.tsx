@@ -1,11 +1,16 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { brandConfig } from '@/lib/brand-config'
+import { useBrandConfig, useBrand } from '@/lib/brand-context'
+import { getBrandNavigation } from '@/lib/navigation-utils'
 
 export function Navbar() {
+  const brandConfig = useBrandConfig()
+  const { brandKey } = useBrand()
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const navigation = getBrandNavigation(brandKey, brandConfig.navigation)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +43,7 @@ export function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {brandConfig.navigation.map((link) => (
+            {navigation.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -64,7 +69,7 @@ export function Navbar() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden pb-4 border-t border-charcoal">
-            {brandConfig.navigation.map((link) => (
+            {navigation.map((link) => (
               <a
                 key={link.href}
                 href={link.href}

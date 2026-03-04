@@ -1,0 +1,53 @@
+import { tobikoConfig } from './brands/tobiko'
+import { sakuraConfig } from './brands/sakura'
+
+// Brand registry - add new brands here
+export const brandRegistry = {
+  tobiko: tobikoConfig,
+  sakura: sakuraConfig,
+  // Add more brands here as needed
+  // example: exampleConfig,
+} as const
+
+// Type definitions
+export type BrandKey = keyof typeof brandRegistry
+export type BrandConfig = typeof brandRegistry[BrandKey]
+export type Location = BrandConfig['locations'][0]
+export type DeliveryPlatform = BrandConfig['delivery']['platforms'][0]
+export type SocialPlatform = BrandConfig['social'][keyof BrandConfig['social']]
+
+// Default brand (fallback)
+export const DEFAULT_BRAND: BrandKey = 'tobiko'
+
+// Get brand configuration by key
+export function getBrandConfig(brandKey: string | undefined): BrandConfig {
+  if (!brandKey) {
+    console.warn(`Brand key is undefined, falling back to default brand "${DEFAULT_BRAND}"`)
+    return brandRegistry[DEFAULT_BRAND]
+  }
+  
+  const normalizedKey = brandKey.toLowerCase() as BrandKey
+  
+  if (normalizedKey in brandRegistry) {
+    return brandRegistry[normalizedKey]
+  }
+  
+  // Fallback to default brand if not found
+  console.warn(`Brand "${brandKey}" not found, falling back to default brand "${DEFAULT_BRAND}"`)
+  return brandRegistry[DEFAULT_BRAND]
+}
+
+// Get all available brand keys
+export function getAvailableBrands(): BrandKey[] {
+  return Object.keys(brandRegistry) as BrandKey[]
+}
+
+// Check if a brand exists
+export function brandExists(brandKey: string | undefined): boolean {
+  if (!brandKey) {
+    return false
+  }
+  
+  const normalizedKey = brandKey.toLowerCase() as BrandKey
+  return normalizedKey in brandRegistry
+}

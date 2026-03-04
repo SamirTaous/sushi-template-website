@@ -1,12 +1,50 @@
-# Restaurant Website Template
+# Multi-Brand Restaurant Website Template
 
-This website has been converted into a reusable template that can be easily customized for different restaurant brands by modifying a single configuration file.
+This website template supports multiple restaurant brands through URL-based routing. Each brand can have its own configuration, styling, and content while sharing the same codebase.
 
-## How to Customize for Your Brand
+## URL Structure
 
-### 1. Edit Brand Configuration
+- `/{brand-name}` - Main website for the specified brand
+- `/brands` - Development page showing all available brands
+- `/` - Redirects to the default brand
 
-All brand-specific content is centralized in `lib/brand-config.ts`. Simply modify the values in this file to rebrand the entire website:
+## How to Use
+
+### 1. Access Different Brands
+
+Visit different brands using their URL paths:
+- `http://localhost:3000/tobiko` - Tobiko sushi restaurant
+- `http://localhost:3000/sakura` - Sakura Japanese restaurant
+- `http://localhost:3000/brands` - View all available brands
+
+### 2. Add a New Brand
+
+1. **Create brand configuration file:**
+   ```typescript
+   // lib/brands/your-brand.ts
+   export const yourBrandConfig = {
+     name: "YOUR BRAND",
+     tagline: "Your tagline",
+     // ... rest of configuration
+   }
+   ```
+
+2. **Register the brand:**
+   ```typescript
+   // lib/brand-registry.ts
+   import { yourBrandConfig } from './brands/your-brand'
+   
+   export const brandRegistry = {
+     tobiko: tobikoConfig,
+     sakura: sakuraConfig,
+     yourbrand: yourBrandConfig, // Add here
+   }
+   ```
+
+3. **Access your brand:**
+   Visit `http://localhost:3000/yourbrand`
+
+### 3. Brand Configuration Structure
 
 ```typescript
 export const brandConfig = {
@@ -39,7 +77,70 @@ export const brandConfig = {
 }
 ```
 
-### 2. Key Configuration Sections
+Each brand configuration includes:
+
+```typescript
+export const brandConfig = {
+  // Brand Identity
+  name: "YOUR_RESTAURANT_NAME",
+  tagline: "Your Restaurant Tagline",
+  description: "Your restaurant description",
+  
+  // Colors (CSS custom properties)
+  colors: {
+    primary: "#your-primary-color",
+    secondary: "#your-secondary-color", 
+    accent: "#your-accent-color",
+    gold: "#your-gold-color",
+    cream: "#your-cream-color",
+  },
+  
+  // Contact & Locations
+  locations: [
+    {
+      name: "Your Location Name",
+      address: "Your Address",
+      city: "Your City",
+      phone: { display: "Display Number", link: "LinkNumber" },
+      // ... more location details
+    }
+  ],
+  
+  // ... other configuration options
+}
+```
+
+### 4. Dynamic Styling
+
+Colors are automatically applied through CSS custom properties. Each brand's colors override the default theme:
+
+```css
+:root {
+  --color-primary: #brand-primary-color;
+  --color-secondary: #brand-secondary-color;
+  --color-accent: #brand-accent-color;
+  --color-gold: #brand-gold-color;
+  --color-cream: #brand-cream-color;
+}
+```
+
+### 5. Component Usage
+
+Components automatically use the current brand's configuration through React Context:
+
+```typescript
+import { useBrandConfig } from '@/lib/brand-context'
+
+export function MyComponent() {
+  const brandConfig = useBrandConfig()
+  
+  return (
+    <h1>{brandConfig.name}</h1>
+  )
+}
+```
+
+### 6. Key Configuration Sections
 
 #### Brand Identity
 - `name`: Restaurant name displayed throughout the site
@@ -118,32 +219,33 @@ The following components automatically use the brand configuration:
 - `components/delivery.tsx` - Delivery information and platform links
 - `components/footer.tsx` - Contact info, locations, brand name
 
-### 6. Example: Rebranding for a New Restaurant
+### 7. Example: Adding a New Brand
 
-To rebrand for "Sakura Sushi":
+To add "Ramen House" brand:
 
-1. Update `lib/brand-config.ts`:
+1. **Create configuration:**
 ```typescript
-export const brandConfig = {
-  name: "SAKURA",
-  tagline: "Authentic Japanese Experience",
-  description: "Traditional Japanese cuisine with modern flair",
+// lib/brands/ramen-house.ts
+export const ramenHouseConfig = {
+  name: "RAMEN HOUSE",
+  tagline: "Authentic Japanese Ramen",
+  description: "Traditional ramen bowls made with love",
   
   colors: {
-    primary: "#1a1a2e",
-    secondary: "#16213e", 
-    accent: "#e94560",
-    gold: "#f39c12",
-    cream: "#eee2dc",
+    primary: "#2c1810",
+    secondary: "#3d2317", 
+    accent: "#d2691e",
+    gold: "#ffa500",
+    cream: "#faf0e6",
   },
   
   locations: [
     {
       id: 1,
-      name: "Sakura Downtown",
-      address: "123 Main Street",
-      city: "New York, NY",
-      phone: { display: "(555) 123-4567", link: "5551234567" },
+      name: "Ramen House Downtown",
+      address: "789 Noodle Street",
+      city: "Tokyo, Japan",
+      phone: { display: "+81-3-1234-5678", link: "81312345678" },
       // ... rest of location config
     }
   ],
@@ -151,40 +253,81 @@ export const brandConfig = {
 }
 ```
 
-2. Replace logo file: `/public/tobiko-sushi-logo.png` → `/public/sakura-logo.png`
-3. Update logo path in config: `logo: "/sakura-logo.png"`
+2. **Register the brand:**
+```typescript
+// lib/brand-registry.ts
+import { ramenHouseConfig } from './brands/ramen-house'
 
-That's it! The entire website will now be branded for Sakura Sushi.
+export const brandRegistry = {
+  tobiko: tobikoConfig,
+  sakura: sakuraConfig,
+  'ramen-house': ramenHouseConfig, // Add here
+}
+```
 
-### 7. Development
+3. **Access the brand:**
+Visit `http://localhost:3000/ramen-house`
 
-After making changes to the brand configuration:
+### 8. Development
+
+After adding new brands or making changes:
 
 ```bash
 npm run dev
 ```
 
-The changes will be reflected immediately across all components.
+Visit `http://localhost:3000/brands` to see all available brands.
 
-### 8. TypeScript Support
+### 9. Production Deployment
 
-The configuration includes full TypeScript support with type definitions for better development experience and error checking.
+Each brand is accessible via its URL path:
+- `https://yourdomain.com/tobiko`
+- `https://yourdomain.com/sakura`
+- `https://yourdomain.com/your-new-brand`
 
-## File Structure
+### 10. File Structure
 
 ```
 lib/
-  brand-config.ts          # Main brand configuration file
-
-components/
-  hero.tsx                 # Uses: name, tagline, assets.heroBackground
-  navbar.tsx               # Uses: name, assets.logo, navigation
-  addresses.tsx            # Uses: locations, sections.addresses
-  delivery.tsx             # Uses: delivery configuration
-  footer.tsx               # Uses: name, locations, navigation
+  brands/
+    tobiko.ts              # Tobiko brand configuration
+    sakura.ts              # Sakura brand configuration
+    your-brand.ts          # Your brand configuration
+  brand-registry.ts        # Central brand registry
+  brand-context.tsx        # React context for brand data
 
 app/
-  layout.tsx               # Uses: seo, assets.favicon
+  [brand]/
+    layout.tsx             # Dynamic brand layout
+    page.tsx               # Brand homepage
+  brands/
+    page.tsx               # Brand selection page
+  page.tsx                 # Root redirect
+
+components/
+  hero.tsx                 # Uses: useBrandConfig()
+  navbar.tsx               # Uses: useBrandConfig()
+  addresses.tsx            # Uses: useBrandConfig()
+  delivery.tsx             # Uses: useBrandConfig()
+  footer.tsx               # Uses: useBrandConfig()
 ```
 
-This template system makes it easy to create multiple restaurant websites or quickly rebrand an existing one by changing a single configuration file.
+### 11. Benefits
+
+- **Multi-tenant**: Host multiple restaurant brands on one codebase
+- **URL-based routing**: Each brand has its own URL path
+- **Dynamic styling**: Colors and assets change per brand
+- **Shared components**: All brands use the same UI components
+- **Type safety**: Full TypeScript support with brand validation
+- **Fallback handling**: Invalid brand names redirect to default brand
+- **Development tools**: Brand selection page for easy testing
+
+### 12. TypeScript Support
+
+The system includes full TypeScript support with:
+- Brand key validation
+- Configuration type checking  
+- React context type safety
+- Auto-completion for brand properties
+
+This multi-brand template system allows you to efficiently manage multiple restaurant websites from a single codebase, with each brand having its own unique identity while sharing the same robust foundation.

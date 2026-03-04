@@ -1,9 +1,10 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { brandConfig } from '@/lib/brand-config'
+import { useBrandConfig } from '@/lib/brand-context'
 
 export function Addresses() {
+  const brandConfig = useBrandConfig()
   const cardsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

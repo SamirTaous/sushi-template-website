@@ -1,6 +1,9 @@
-import { brandConfig } from '@/lib/brand-config'
+'use client'
+
+import { useBrandConfig } from '@/lib/brand-context'
 
 export function Delivery() {
+  const brandConfig = useBrandConfig()
   return (
     <section 
       id="delivery"

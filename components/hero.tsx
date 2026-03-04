@@ -1,9 +1,10 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { brandConfig } from '@/lib/brand-config'
+import { useBrandConfig } from '@/lib/brand-context'
 
 export function Hero() {
+  const brandConfig = useBrandConfig()
   const titleRef = useRef<HTMLHeadingElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
