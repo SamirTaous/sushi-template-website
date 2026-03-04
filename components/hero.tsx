@@ -78,7 +78,7 @@ export function Hero() {
 
         {/* CTA Button */}
         <a
-          href="/contact"
+          href="#reservation"
           className="inline-block px-8 py-4 bg-red-accent text-cream font-serif text-lg tracking-wider uppercase hover:bg-red-accent/80 transition-all duration-300 transform hover:scale-105"
         >
           {brandConfig.cta.reservation}

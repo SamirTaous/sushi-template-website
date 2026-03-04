@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { useBrandConfig, useBrand } from '@/lib/brand-context'
+import { getBrandUrl } from '@/lib/navigation-utils'
 
 const SUSHI_ITEMS = [
   { 
@@ -36,6 +38,8 @@ const SUSHI_ITEMS = [
 ]
 
 export function Menu() {
+  const brandConfig = useBrandConfig()
+  const { brandKey } = useBrand()
   return (
     <section 
       id="menu"
@@ -92,9 +96,12 @@ export function Menu() {
           <p className="text-cream/60 text-lg mb-6">
             Disponible pour dîner sur place ou à emporter
           </p>
-          <button className="px-8 py-4 bg-red-accent text-cream font-serif text-lg tracking-wider uppercase hover:bg-red-accent/80 transition-all duration-300 transform hover:scale-105">
+          <a 
+            href={getBrandUrl(brandKey, '/menu')}
+            className="inline-block px-8 py-4 bg-red-accent text-cream font-serif text-lg tracking-wider uppercase hover:bg-red-accent/80 transition-all duration-300 transform hover:scale-105"
+          >
             Voir le Menu Complet
-          </button>
+          </a>
         </div>
       </div>
     </section>
