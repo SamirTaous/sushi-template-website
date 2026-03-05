@@ -59,6 +59,26 @@
           "value": "www.sakura-restaurant.com"
         }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/samurai/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "samuraisushi.ma"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/samurai/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.samuraisushi.ma"
+        }
+      ]
     }
   ],
   "headers": [

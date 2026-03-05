@@ -1,10 +1,12 @@
 import { tobikoConfig } from './brands/tobiko'
 import { sakuraConfig } from './brands/sakura'
+import { samuraiConfig } from './brands/samurai'
 
 // Brand registry - add new brands here
 export const brandRegistry = {
   tobiko: tobikoConfig,
   sakura: sakuraConfig,
+  samurai: samuraiConfig,
   // Add more brands here as needed
   // example: exampleConfig,
 } as const

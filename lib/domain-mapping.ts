@@ -4,6 +4,8 @@ export const domainMapping = {
   'www.tobiko.com': 'tobiko',
   'sakura-restaurant.com': 'sakura',
   'www.sakura-restaurant.com': 'sakura',
+  'samuraisushi.ma': 'samurai',
+  'www.samuraisushi.ma': 'samurai',
   // Add more domain mappings here as needed
 } as const
 
