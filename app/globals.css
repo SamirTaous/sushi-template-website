@@ -3,25 +3,15 @@
 @theme {
   --color-black: var(--color-primary, #0a0a0a);
   --color-charcoal: var(--color-secondary, #1a1a1a);
-  --color-cream: var(--color-cream, #F5F0E8);
+  --color-cream: var(--brand-cream, #F5F0E8);
   --color-red-accent: var(--color-accent, #C0392B);
-  --color-gold: var(--color-gold, #D4A843);
+  --color-gold: var(--brand-gold, #D4A843);
   
-  --font-sans: 'Inter', 'Inter Fallback';
-  --font-serif: 'Cormorant Garamond', 'Cormorant Garamond Fallback';
+  --font-sans: var(--brand-font-sans, 'Inter', 'Inter Fallback');
+  --font-serif: var(--brand-font-serif, 'Cormorant Garamond', 'Cormorant Garamond Fallback');
 }
 
 @layer base {
-  body {
-    @apply bg-black text-cream;
-    font-family: var(--font-sans);
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
-    font-weight: 600;
-  }
-  
   * {
     @apply box-border;
   }
@@ -33,10 +23,51 @@
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, #D4A843 0%, #F5F0E8 100%);
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-cream) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Brand-specific color overrides */
+  .bg-black {
+    background-color: var(--color-black) !important;
+  }
+  
+  .bg-charcoal {
+    background-color: var(--color-charcoal) !important;
+  }
+  
+  .bg-red-accent {
+    background-color: var(--color-red-accent) !important;
+  }
+  
+  .bg-gold {
+    background-color: var(--color-gold) !important;
+  }
+  
+  .text-cream {
+    color: var(--color-cream) !important;
+  }
+  
+  .text-gold {
+    color: var(--color-gold) !important;
+  }
+  
+  .text-black {
+    color: var(--color-black) !important;
+  }
+  
+  .border-gold {
+    border-color: var(--color-gold) !important;
+  }
+  
+  .border-charcoal {
+    border-color: var(--color-charcoal) !important;
+  }
+  
+  .border-red-accent {
+    border-color: var(--color-red-accent) !important;
   }
 
   /* Scroll animations */
@@ -110,7 +141,7 @@
     scroll-behavior: smooth;
   }
 
-  /* Custom cursor */
+  /* Custom cursor - using fallback colors since CSS vars don't work in SVG data URLs */
   body {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4" fill="%23D4A843"/><circle cx="16" cy="16" r="10" fill="none" stroke="%23C0392B" stroke-width="1"/></svg>') 16 16, auto;
   }
@@ -125,7 +156,7 @@
   input:focus-visible,
   textarea:focus-visible,
   select:focus-visible {
-    outline: 2px solid #D4A843;
+    outline: 2px solid var(--color-gold);
     outline-offset: 2px;
   }
 
@@ -136,8 +167,8 @@
 
   /* Selection styling */
   ::selection {
-    background-color: #C0392B;
-    color: #F5F0E8;
+    background-color: var(--color-red-accent);
+    color: var(--color-cream);
   }
 
   ::-webkit-scrollbar {
@@ -145,15 +176,15 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: var(--color-black);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #D4A843;
+    background: var(--color-gold);
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #C0392B;
+    background: var(--color-red-accent);
   }
 }

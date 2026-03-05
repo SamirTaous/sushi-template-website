@@ -79,6 +79,26 @@
           "value": "www.samuraisushi.ma"
         }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/akai/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "akai.ma"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/akai/$1",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.akai.ma"
+        }
+      ]
     }
   ],
   "headers": [

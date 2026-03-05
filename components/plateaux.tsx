@@ -109,13 +109,8 @@ export function Plateaux() {
                 </div>
 
                 <div className="p-6 relative z-10 flex flex-col h-full">
-                  {/* Price badge - bottom left */}
-                  <div className="absolute bottom-6 left-6 bg-gold text-black px-4 py-2 text-sm font-serif font-bold">
-                    {platter.price}
-                  </div>
-
                   {/* Content */}
-                  <div className="flex-grow pr-4">
+                  <div className="flex-grow pr-4 pb-12">
                     <h3 className="text-2xl font-serif font-bold text-cream mb-2 tracking-wide">
                       {platter.name}
                     </h3>
@@ -139,10 +134,18 @@ export function Plateaux() {
                     </div>
                   </div>
 
-                  {/* CTA Button */}
-                  <button className="mt-6 w-full py-2 border border-gold text-gold hover:bg-red-accent hover:text-cream hover:border-red-accent transition-all duration-300 text-sm font-serif uppercase tracking-wider">
-                    Ajouter au Panier
-                  </button>
+                  {/* Price and Button Row */}
+                  <div className="flex items-center justify-between gap-4 mt-auto">
+                    {/* Price badge */}
+                    <div className="bg-gold text-black px-4 py-2 text-sm font-serif font-bold flex-shrink-0">
+                      {platter.price}
+                    </div>
+                    
+                    {/* CTA Button */}
+                    <button className="flex-1 py-2 border border-gold text-gold hover:bg-red-accent hover:text-cream hover:border-red-accent transition-all duration-300 text-sm font-serif uppercase tracking-wider">
+                      Ajouter au Panier
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

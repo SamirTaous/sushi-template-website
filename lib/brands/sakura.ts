@@ -12,13 +12,13 @@ export const sakuraConfig = {
     themeColor: "#1a1a2e",
   },
 
-  // Brand Colors (CSS custom properties)
+  // Brand Colors (CSS custom properties) - ALL RED FOR TESTING
   colors: {
-    primary: "#1a1a2e",      // dark blue
-    secondary: "#16213e",    // darker blue
-    accent: "#e94560",       // pink/red
-    gold: "#f39c12",         // orange gold
-    cream: "#eee2dc",        // light cream
+    primary: "#8B0000",      // dark red
+    secondary: "#A52A2A",    // brown red
+    accent: "#FF0000",       // bright red
+    gold: "#DC143C",         // crimson red
+    cream: "#FFB6C1",        // light pink/red
   },
 
   // Typography

@@ -4,7 +4,7 @@ export const tobikoConfig = {
   name: "TOBIKO",
   tagline: "Cuisine Japonaise Fine",
   description: "Experience authentic Japanese sushi crafted with precision and passion",
-  
+
   // SEO & Metadata
   seo: {
     title: "Tobiko Fine Sushi | Premium Japanese Cuisine",
@@ -63,7 +63,7 @@ export const tobikoConfig = {
     {
       id: 2,
       name: "Tobiko Bouskoura",
-      address: "Bouskoura", 
+      address: "Bouskoura",
       city: "Maroc",
       phone: {
         display: "0522 01 29 01",
@@ -89,7 +89,7 @@ export const tobikoConfig = {
         primary: true,
       },
       {
-        name: "Deliveroo", 
+        name: "Deliveroo",
         url: "#",
         primary: false,
       },
