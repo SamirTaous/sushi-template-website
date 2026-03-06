@@ -1,8 +1,10 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { useBrandConfig } from '@/lib/brand-context'
 
 export function Experience() {
+  const brandConfig = useBrandConfig()
   const leftRef = useRef<HTMLDivElement>(null)
   const rightRef = useRef<HTMLDivElement>(null)
 
@@ -41,7 +43,7 @@ export function Experience() {
             <div 
               className="absolute inset-0"
               style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1617196034682-dbab064af60e?w=600&q=80)',
+                backgroundImage: `url(${brandConfig.experience?.backgroundImage || 'https://images.unsplash.com/photo-1617196034682-dbab064af60e?w=600&q=80'})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 filter: 'brightness(0.35)'
@@ -50,40 +52,28 @@ export function Experience() {
             
             <div className="relative z-10 p-8">
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-cream mb-6 tracking-tight">
-                L'Expérience
+                {brandConfig.experience?.title || "L'Expérience"}
               </h2>
               <div className="h-1 w-16 bg-gold mb-8" />
             
             <p className="text-cream/80 text-lg leading-relaxed mb-6">
-              Chez Tobiko, nous croyons que manger du sushi est bien plus qu'une simple transaction. C'est une célébration des flaveurs, une harmonie entre tradition et innovation, et une connexion entre le chef et le client.
+              {brandConfig.experience?.description || "Une expérience culinaire exceptionnelle vous attend."}
             </p>
 
             <p className="text-cream/70 text-base leading-relaxed mb-8">
-              Chaque pièce de sushi est préparée avec une attention minutieuse au détail. Nos chefs maîtres travaillent exclusivement avec les meilleurs ingrédients importés du Japon, sélectionnés pour leur qualité et leur fraîcheur inégalée.
+              {brandConfig.experience?.details || "Nos chefs travaillent avec passion pour vous offrir le meilleur."}
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0" />
-                <div>
-                  <h4 className="text-gold font-serif font-bold mb-1">Authenticité</h4>
-                  <p className="text-cream/60 text-sm">Techniques traditionnelles japonaises honoring centuries de heritage</p>
+              {brandConfig.experience?.values?.map((value, index) => (
+                <div key={index} className="flex items-start gap-4">
+                  <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-gold font-serif font-bold mb-1">{value.title}</h4>
+                    <p className="text-cream/60 text-sm">{value.description}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0" />
-                <div>
-                  <h4 className="text-gold font-serif font-bold mb-1">Précision</h4>
-                  <p className="text-cream/60 text-sm">Chaque coupe, chaque rouleau, chaque détail perfectionné</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0" />
-                <div>
-                  <h4 className="text-gold font-serif font-bold mb-1">Passion</h4>
-                  <p className="text-cream/60 text-sm">Dévouement inébranlable à l'excellence et à la satisfaction</p>
-                </div>
-              </div>
+              ))}
             </div>
             </div>
           </div>
@@ -98,40 +88,34 @@ export function Experience() {
             <div className="absolute left-0 top-0 w-1 h-24 bg-red-accent" />
             
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-cream mb-6 tracking-tight">
-              Notre Philosophie
+              {brandConfig.philosophy?.title || "Notre Philosophie"}
             </h2>
             
             <p className="text-cream/80 text-lg leading-relaxed mb-6">
-              Nous ne servons pas simplement du sushi. Nous partageons une histoire, un art, une passion qui a été transmise à travers les générations.
+              {brandConfig.philosophy?.description || "Notre philosophie guide chaque aspect de notre service."}
             </p>
 
             <p className="text-cream/70 text-base leading-relaxed mb-8">
-              Notre restaurant est construit sur le principe fondamental que chaque client mérite l'excellence. Du moment où vous franchissez notre porte jusqu'au dernier repas, nous nous engageons à créer une expérience inoubliable.
+              {brandConfig.philosophy?.details || "Nous nous engageons à créer une expérience inoubliable."}
             </p>
 
             <div className="border-l-2 border-gold pl-6 py-4">
               <p className="text-cream/90 italic font-serif text-lg leading-relaxed">
-                "Le sushi ne se goûte pas seulement — il se ressent. C'est la quintessence de la nature, transformée par la main experte du maître."
+                "{brandConfig.philosophy?.quote || "L'excellence culinaire est notre passion."}"
               </p>
-              <p className="text-gold font-serif font-bold mt-4">— Chef Masahiro Tobiko</p>
+              <p className="text-gold font-serif font-bold mt-4">— {brandConfig.philosophy?.chef || "Chef"}</p>
             </div>
           </div>
         </div>
 
         {/* Bottom stats - horizontal row with top borders */}
         <div className="grid grid-cols-3 gap-12 mt-20 pt-12">
-          <div className="border-t border-gold pt-8">
-            <div className="text-4xl font-serif font-bold text-gold mb-2">25+</div>
-            <p className="text-cream/60 text-sm uppercase tracking-widest">Years Experience</p>
-          </div>
-          <div className="border-t border-gold pt-8">
-            <div className="text-4xl font-serif font-bold text-gold mb-2">500+</div>
-            <p className="text-cream/60 text-sm uppercase tracking-widest">Daily Customers</p>
-          </div>
-          <div className="border-t border-gold pt-8">
-            <div className="text-4xl font-serif font-bold text-gold mb-2">100%</div>
-            <p className="text-cream/60 text-sm uppercase tracking-widest">Premium Ingredients</p>
-          </div>
+          {brandConfig.philosophy?.stats?.map((stat, index) => (
+            <div key={index} className="border-t border-gold pt-8">
+              <div className="text-4xl font-serif font-bold text-gold mb-2">{stat.number}</div>
+              <p className="text-cream/60 text-sm uppercase tracking-widest">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

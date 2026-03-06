@@ -32,6 +32,7 @@ export const tobikoConfig = {
     logo: "/tobiko-sushi-logo.png",
     favicon: "/icon.svg",
     heroBackground: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=1920&q=80",
+    website: "www.tobiko.ma",
   },
 
   // Contact Information
@@ -162,5 +163,40 @@ export const tobikoConfig = {
       title: "Nos Adresses",
       subtitle: "Visitez l'une de nos trois locations à Paris",
     },
+  },
+
+  // Experience & Philosophy
+  experience: {
+    title: "L'Expérience",
+    description: "Chez Tobiko, nous croyons que manger du sushi est bien plus qu'une simple transaction. C'est une célébration des flaveurs, une harmonie entre tradition et innovation, et une connexion entre le chef et le client.",
+    details: "Chaque pièce de sushi est préparée avec une attention minutieuse au détail. Nos chefs maîtres travaillent exclusivement avec les meilleurs ingrédients importés du Japon, sélectionnés pour leur qualité et leur fraîcheur inégalée.",
+    values: [
+      {
+        title: "Authenticité",
+        description: "Techniques traditionnelles japonaises honoring centuries de heritage"
+      },
+      {
+        title: "Précision", 
+        description: "Chaque coupe, chaque rouleau, chaque détail perfectionné"
+      },
+      {
+        title: "Passion",
+        description: "Dévouement inébranlable à l'excellence et à la satisfaction"
+      }
+    ],
+    backgroundImage: "https://images.unsplash.com/photo-1617196034682-dbab064af60e?w=600&q=80"
+  },
+
+  philosophy: {
+    title: "Notre Philosophie",
+    description: "Nous ne servons pas simplement du sushi. Nous partageons une histoire, un art, une passion qui a été transmise à travers les générations.",
+    details: "Notre restaurant est construit sur le principe fondamental que chaque client mérite l'excellence. Du moment où vous franchissez notre porte jusqu'au dernier repas, nous nous engageons à créer une expérience inoubliable.",
+    quote: "Le sushi ne se goûte pas seulement — il se ressent. C'est la quintessence de la nature, transformée par la main experte du maître.",
+    chef: "Chef Masahiro Tobiko",
+    stats: [
+      { number: "25+", label: "Years Experience" },
+      { number: "500+", label: "Daily Customers" },
+      { number: "100%", label: "Premium Ingredients" }
+    ]
   },
 } as const;

@@ -32,6 +32,7 @@ export const sakuraConfig = {
     logo: "/sakura-logo.png",
     favicon: "/sakura-icon.svg",
     heroBackground: "https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=1920&q=80",
+    website: "www.sakura-restaurant.com",
   },
 
   // Contact Information

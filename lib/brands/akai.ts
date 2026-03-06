@@ -12,13 +12,13 @@ export const akaiConfig = {
         themeColor: "#E30613",
     },
     
-    // Brand Colors - Neutral palette with sage green accents
+    // Brand Colors 
     colors: {
-        primary: "#2C2C2C",       // Dark Gray (Main text and headers)
-        secondary: "#4A4A4A",     // Medium Gray (Secondary text)
-        accent: "#6F7F6B",        // Sage Green (Primary accent color)
-        gold: "#B8860B",          // Dark Goldenrod (Subtle gold accents)
-        cream: "#FAFAFA",         // Off-white (Background color)
+        primary: "#2C2C2C",       // Dark Gray (Background)
+        secondary: "#4A4A4A",     // Medium Gray (Borders)
+        accent: "#6F7F6B",        // Sage Green (Buttons)
+        gold: "#B8860B",          // Dark Goldenrod (Secondary text)
+        cream: "#FAFAFA",         // Off-white (Text)
         button: "#6F7F6B",        // Sage Green (For buttons and hover effects)
     },
     
@@ -34,6 +34,7 @@ export const akaiConfig = {
         favicon: "/icon.svg",
         // Action-packed photo: Flame from a wok or a bright red sushi roll
         heroBackground: "https://images.unsplash.com/photo-1555126634-323283e090fa?w=1920&q=80",
+        website: "www.akai.ma",
     },
     
     // Contact Information
@@ -150,5 +151,40 @@ export const akaiConfig = {
             title: "Passer nous voir",
             subtitle: "Au cœur de l'agitation de Tanger",
         },
+    },
+
+    // Experience & Philosophy
+    experience: {
+        title: "L'Expérience",
+        description: "Chez Akai, nous fusionnons l'art ancestral du sushi avec l'énergie explosive du wok. Chaque plat raconte une histoire de passion, d'innovation et de respect des traditions culinaires asiatiques.",
+        details: "Nos chefs maîtres maîtrisent à la fois les techniques délicates du sushi et la puissance du wok flamboyant. Cette dualité crée une expérience culinaire unique où la finesse rencontre l'intensité.",
+        values: [
+            {
+                title: "Fusion",
+                description: "L'harmonie parfaite entre sushi traditionnel et wok moderne"
+            },
+            {
+                title: "Intensité", 
+                description: "Des saveurs puissantes qui éveillent tous vos sens"
+            },
+            {
+                title: "Innovation",
+                description: "Créativité constante dans le respect des traditions"
+            }
+        ],
+        backgroundImage: "https://images.unsplash.com/photo-1617196034682-dbab064af60e?w=600&q=80"
+    },
+
+    philosophy: {
+        title: "Notre Philosophie",
+        description: "Nous croyons que la cuisine asiatique est un art vivant qui évolue tout en préservant son essence. Akai incarne cette philosophie à travers chaque flamme du wok et chaque grain de riz.",
+        details: "Notre mission est de vous faire découvrir l'âme vibrante de l'Asie culinaire. De la délicatesse du sushi à l'énergie du wok, nous créons des moments d'exception qui marquent les esprits.",
+        quote: "Le feu du wok et la précision du sushi : deux arts qui se complètent pour créer l'harmonie parfaite des saveurs asiatiques.",
+        chef: "Chef Hiroshi Akai",
+        stats: [
+            { number: "15+", label: "Années d'Excellence" },
+            { number: "300+", label: "Clients Quotidiens" },
+            { number: "100%", label: "Ingrédients Frais" }
+        ]
     },
 } as const;

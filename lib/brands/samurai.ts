@@ -33,6 +33,7 @@ export const samuraiConfig = {
       favicon: "/icon.svg",
       // Dramatic sushi photo with dark background and red accents
       heroBackground: "https://images.unsplash.com/photo-1583623025817-d180a2221d0a?w=1920&q=80",
+      website: "www.samuraisushi.ma",
     },
   
     // Contact Information

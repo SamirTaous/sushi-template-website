@@ -29,8 +29,8 @@ export function Footer() {
             <p className="text-cream/60 text-sm leading-relaxed">
               {brandConfig.description}
             </p>
-            <a href="https://www.tobiko.ma" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-cream transition-colors text-sm mt-2 inline-block">
-              www.tobiko.ma
+            <a href={`https://${brandConfig.assets.website}`} target="_blank" rel="noopener noreferrer" className="text-gold hover:text-cream transition-colors text-sm mt-2 inline-block">
+              {brandConfig.assets.website}
             </a>
           </div>
 
@@ -106,7 +106,7 @@ export function Footer() {
           <div className="h-px bg-gradient-to-r from-transparent via-gold to-transparent opacity-40" />
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-cream/40 text-xs text-center md:text-left">
-              © {currentYear} {brandConfig.name} Fine Sushi • {brandConfig.locations.map(l => l.name.split(' ')[1]).join(' & ')} • www.tobiko.ma
+              © {currentYear} {brandConfig.name} Fine Sushi • {brandConfig.locations.map(l => l.name.split(' ')[1]).join(' & ')} • {brandConfig.assets.website}
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-cream/40 hover:text-cream text-xs transition-colors">
