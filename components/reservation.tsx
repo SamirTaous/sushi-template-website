@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { useBrandConfig } from '@/lib/brand-context'
 
 export function Reservation() {
+  const brandConfig = useBrandConfig()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -210,20 +212,20 @@ export function Reservation() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-12 border-t border-charcoal">
           <div className="text-center">
             <h4 className="text-gold font-serif font-bold mb-2 uppercase tracking-widest">Téléphone</h4>
-            <a href="tel:+33123456789" className="text-cream/70 hover:text-cream transition-colors">
-              +33 (1) 23 45 67 89
+            <a href={`tel:${brandConfig.contact.phone.link}`} className="text-cream/70 hover:text-cream transition-colors">
+              {brandConfig.contact.phone.display}
             </a>
           </div>
           <div className="text-center">
             <h4 className="text-gold font-serif font-bold mb-2 uppercase tracking-widest">Email</h4>
-            <a href="mailto:info@tobiko.fr" className="text-cream/70 hover:text-cream transition-colors">
-              info@tobiko.fr
+            <a href={`mailto:${brandConfig.contact.email}`} className="text-cream/70 hover:text-cream transition-colors">
+              {brandConfig.contact.email}
             </a>
           </div>
           <div className="text-center">
             <h4 className="text-gold font-serif font-bold mb-2 uppercase tracking-widest">Horaires</h4>
             <p className="text-cream/70 text-sm">
-              Mar-Dim: 18h-23h<br />Lundi: Fermé
+              {brandConfig.contact.hours}
             </p>
           </div>
         </div>

@@ -4,14 +4,14 @@ export const yakitoriaConfig = {
     name: "Yakitoria Sushi",
     tagline: "Sushi & Soul",
     description: "Sushi Restaurant – Spécialités japonaises & coréennes – Tanger",
-    
+
     // SEO & Metadata
     seo: {
         title: "Yakitoria Sushi | Sushi Japonais & Coréen Tanger",
         description: "Découvrez Yakitoria, restaurant sushi japonais et coréen à Tanger. Ouvert de 16h à 2h.",
         themeColor: "#B91C1C",
     },
-    
+
     // Brand Colors 
     colors: {
         primary: "#0F0F0F",       // Dark Gray (Background)
@@ -21,13 +21,13 @@ export const yakitoriaConfig = {
         cream: "#F9FAFB",         // Off-white (Text)
         button: "#B91C1C",        // Dark Red (For buttons and hover effects)
     },
-    
+
     // Typography
     fonts: {
         serif: "Inter",           // Keep it modern (Sans-serif headings for Yakitoria)
         sans: "Inter",            // Clean, geometric, and fast-reading
     },
-    
+
     // Logo & Assets
     assets: {
         logo: "/yakitoria-logo.jpg",
@@ -35,7 +35,7 @@ export const yakitoriaConfig = {
         heroBackground: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=1920&q=80",
         website: "www.yakitoria.ma",
     },
-    
+
     // Contact Information
     contact: {
         email: "contact@yakitoria.ma",
@@ -45,7 +45,7 @@ export const yakitoriaConfig = {
         },
         hours: "16h00 – 02h00 • 7j/7",
     },
-    
+
     // Business Locations
     locations: [
         {
@@ -63,7 +63,7 @@ export const yakitoriaConfig = {
             mapImage: "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&q=80",
         }
     ],
-    
+
     // Delivery Information
     delivery: {
         title: "Yakitoria à Domicile",
@@ -72,13 +72,13 @@ export const yakitoriaConfig = {
         backgroundImage: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1920&q=80",
         platforms: [
             {
-                name: "Campsite", 
+                name: "Campsite",
                 url: "https://campsite.bio/yakitoria.sushi",
                 primary: true,
             },
         ],
     },
-    
+
     // Navigation
     navigation: [
         { label: "Accueil", href: "/" },
@@ -88,7 +88,7 @@ export const yakitoriaConfig = {
         { label: "Contact", href: "/contact" },
         { label: "Commander", href: "/#reservation" },
     ],
-    
+
     // Social Media
     social: {
         instagram: {
@@ -128,7 +128,7 @@ export const yakitoriaConfig = {
             enabled: false,
         },
     },
-    
+
     // Call-to-Action Buttons
     cta: {
         reservation: "Commander Maintenant",
@@ -138,7 +138,7 @@ export const yakitoriaConfig = {
         directions: "Localiser",
         followUs: "Suivez-nous",
     },
-    
+
     // Section Headers
     sections: {
         addresses: {
@@ -158,7 +158,7 @@ export const yakitoriaConfig = {
                 description: "Mariage parfait entre traditions japonaises et coréennes"
             },
             {
-                title: "Ambiance", 
+                title: "Ambiance",
                 description: "Atmosphère nocturne unique pour des moments d'exception"
             },
             {

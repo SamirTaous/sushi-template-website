@@ -5,6 +5,10 @@ import { akaiConfig } from './brands/akai'
 import { kinhaoConfig } from './brands/kinhaoConfig'
 import { yakitoriaConfig } from './brands/yakitoriaConfig'
 import { sojuConfig } from './brands/sojuConfig'
+import { yazaiConfig } from './brands/yazaiConfig'
+import { sushiproConfig } from './brands/sushiproConfig'
+import { yamasushiConfig } from './brands/yamasushiConfig'
+import { katanaConfig } from './brands/katanaConfig'
 
 // Brand registry - add new brands here
 export const brandRegistry = {
@@ -15,6 +19,10 @@ export const brandRegistry = {
   kinhao: kinhaoConfig,
   yakitoria: yakitoriaConfig,
   soju: sojuConfig,
+  yazai: yazaiConfig,
+  sushipro: sushiproConfig,
+  yamasushi: yamasushiConfig,
+  katana: katanaConfig,
   // Add more brands here as needed
   // example: exampleConfig,
 } as const
