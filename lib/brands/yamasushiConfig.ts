@@ -87,8 +87,8 @@ export const yamasushiConfig = {
     // Navigation
     navigation: [
         { label: "Accueil", href: "/" },
-        { label: "Menu", href: "/#plateaux" },
-        { label: "Localisation", href: "/menu" },
+        { label: "Plateaux", href: "/#plateaux" },
+        { label: "Menu", href: "/menu" },
         { label: "L'Univers", href: "/#experience" },
         { label: "Contact", href: "/contact" },
         { label: "Commander", href: "/#reservation" },
