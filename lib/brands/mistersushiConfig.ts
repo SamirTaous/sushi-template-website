@@ -4,14 +4,14 @@ export const mistersushiConfig = {
     name: "MISTER SUSHI",
     tagline: "Japonaise & Vietnamienne",
     description: "Mister sushi fès – Restaurant Japonaise & Vietnamienne – Livraison disponible – 06 99 62 92 02 – Horaire: 12h/00h00 – 54 Av Sani Louis cot sadia, Résidence Ibn Battouta fès",
-    
+
     // SEO & Metadata
     seo: {
         title: "Mister Sushi Fès | Restaurant Japonais & Vietnamien",
         description: "Découvrez Mister Sushi à Fès. Restaurant japonais et vietnamien, livraison disponible. Ouvert de 12h à minuit.",
         themeColor: "#DC2626",
     },
-    
+
     // Brand Colors 
     colors: {
         primary: "#0F0F0F",       // Dark Gray (Background)
@@ -21,21 +21,21 @@ export const mistersushiConfig = {
         cream: "#FAFAFA",         // Off-white (Text)
         button: "#DC2626",        // Red (For buttons and hover effects)
     },
-    
+
     // Typography - Stylish fonts matching their elegant branding
     fonts: {
         serif: "Playfair Display",    // Elegant, stylish serif for titles like their branding
         sans: "Inter",                // Clean, modern sans-serif for body text
     },
-    
+
     // Logo & Assets
     assets: {
-        logo: "/mister-sushi-logo.png",
+        logo: "/mistersushi-logo.png",
         favicon: "/icon.svg",
         heroBackground: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1920&q=80",
         website: "www.mistersushi.ma",
     },
-    
+
     // Contact Information
     contact: {
         email: "contact@mistersushi.ma",
@@ -45,7 +45,7 @@ export const mistersushiConfig = {
         },
         hours: "12h00 - 00h00 • 7j/7",
     },
-    
+
     // Business Locations
     locations: [
         {
@@ -63,7 +63,7 @@ export const mistersushiConfig = {
             mapImage: "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=400&q=80",
         }
     ],
-    
+
     // Delivery Information
     delivery: {
         title: "Mister Sushi à Domicile",
@@ -72,18 +72,18 @@ export const mistersushiConfig = {
         backgroundImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=1920&q=80",
         platforms: [
             {
-                name: "Téléphone", 
+                name: "Téléphone",
                 url: "tel:0699629202",
                 primary: true,
             },
             {
-                name: "Instagram", 
+                name: "Instagram",
                 url: "https://www.instagram.com/mister_sushi_fes",
                 primary: false,
             },
         ],
     },
-    
+
     // Navigation
     navigation: [
         { label: "Accueil", href: "/" },
@@ -93,7 +93,7 @@ export const mistersushiConfig = {
         { label: "Contact", href: "/contact" },
         { label: "Commander", href: "/#reservation" },
     ],
-    
+
     // Social Media
     social: {
         instagram: {
@@ -133,7 +133,7 @@ export const mistersushiConfig = {
             enabled: false,
         },
     },
-    
+
     // Call-to-Action Buttons
     cta: {
         reservation: "Commander Maintenant",
@@ -143,7 +143,7 @@ export const mistersushiConfig = {
         directions: "Localiser",
         followUs: "Suivez-nous",
     },
-    
+
     // Section Headers
     sections: {
         addresses: {
@@ -163,7 +163,7 @@ export const mistersushiConfig = {
                 description: "Raffinement dans chaque présentation et création culinaire"
             },
             {
-                title: "Fusion", 
+                title: "Fusion",
                 description: "Mariage harmonieux des traditions japonaises et vietnamiennes"
             },
             {
