@@ -9,6 +9,7 @@ import { yazaiConfig } from './brands/yazaiConfig'
 import { sushiproConfig } from './brands/sushiproConfig'
 import { yamasushiConfig } from './brands/yamasushiConfig'
 import { katanaConfig } from './brands/katanaConfig'
+import { mistersushiConfig } from './brands/mistersushiConfig'
 
 // Brand registry - add new brands here
 export const brandRegistry = {
@@ -23,6 +24,7 @@ export const brandRegistry = {
   sushipro: sushiproConfig,
   yamasushi: yamasushiConfig,
   katana: katanaConfig,
+  mistersushi: mistersushiConfig,
   // Add more brands here as needed
   // example: exampleConfig,
 } as const
